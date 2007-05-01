@@ -14,6 +14,7 @@ Url:            http://search.cpan.org/dist/%{module}
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
+BuildRequires:	perl(CGI)
 BuildArch: 	noarch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}
 
