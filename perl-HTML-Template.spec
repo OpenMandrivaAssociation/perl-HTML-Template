@@ -16,7 +16,6 @@ BuildRequires:	perl-devel
 %endif
 BuildRequires:	perl(CGI)
 BuildArch: 	noarch
-BuildRoot: 	%{_tmppath}/%{name}-%{version}
 
 %description
 This module attempts make using HTML templates simple and natural. It
