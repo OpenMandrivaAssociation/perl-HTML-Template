@@ -1,22 +1,23 @@
-%define module  HTML-Template
-%define	name	perl-%{module}
-%define version 2.9
-%define release %mkrel 4
+%define upstream_name    HTML-Template
+%define upstream_version 2.9
 
-Name: 		%{name}
-Version: 	%{version}
-Release: 	%{release}
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary: 	Perl module to use HTML Templates from CGI scripts
-License: 	GPL or Artistic
+License: 	GPL+ or Artistic
 Group: 		Development/Perl
-Source: 	http://search.cpan.org/CPAN/authors/id/S/SA/SAMTREGAR/%{module}-%{version}.tar.bz2
-Url:            http://search.cpan.org/dist/%{module}
+Url:            http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/S/SA/SAMTREGAR/%{upstream_name}-%{upstream_version}.tar.bz2
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
 BuildRequires:	perl(CGI)
+
 BuildArch: 	noarch
-BuildRoot: 	%{_tmppath}/%{name}-%{version}
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module attempts make using HTML templates simple and natural. It
@@ -30,14 +31,14 @@ you to separate design - the HTML - from the data, which you generate
 in the Perl script.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf %{buildroot}
@@ -51,4 +52,3 @@ rm -rf %{buildroot}
 %doc ANNOUNCE ARTISTIC Changes FAQ README
 %{perl_vendorlib}/HTML
 %{_mandir}/*/*
-
