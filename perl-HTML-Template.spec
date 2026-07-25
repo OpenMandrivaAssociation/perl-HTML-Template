@@ -1,14 +1,14 @@
 %define modname	HTML-Template
-%define modver	2.9
+%define modver	2.97
 
 Summary:	Perl module to use HTML Templates from CGI scripts
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	17
+Version:	%{modver}
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	http://search.cpan.org/CPAN/authors/id/S/SA/SAMTREGAR/%{modname}-%{modver}.tar.bz2
+Url:		https://github.com/mpeters/html-template
+Source0:	https://cpan.metacpan.org/authors/id/S/SA/SAMTREGAR/HTML-Template-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	make
 BuildRequires:	perl(Test::More)
