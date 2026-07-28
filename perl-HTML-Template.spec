@@ -4,7 +4,7 @@
 Summary:	Perl module to use HTML Templates from CGI scripts
 Name:		perl-%{modname}
 Version:	%{modver}
-Release:	1
+Release:	2
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/mpeters/html-template
@@ -40,7 +40,7 @@ in the Perl script.
 %makeinstall_std
 
 %files
-%doc ANNOUNCE ARTISTIC Changes FAQ README
+%doc Changes README
 %{perl_vendorlib}/HTML
 %{_mandir}/man3/*
 
